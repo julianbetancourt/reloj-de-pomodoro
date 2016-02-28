@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed';
+}
+
+
+/***********************
+ HEADER
+***********************/
+
+header {
+  font-size: 1.563rem; /* 25/16 */
+  font-weight: 300;
+  //border-bottom: 0.063rem solid; /* 1/16 */
+  padding: 0.938rem 3.125rem; /* 15/16, 50/16 */
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  //display: flex;
+}
+
+
+header ul li.logo {
+  text-align: center;
+}
+
+
+p {
+  font-weight: 300;
+  font-size: 1.25rem; /* 20/16 */
+  line-height: 1.4;
+}
+
+/***********************
+ MAIN SECTION
+***********************/
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  width: 75rem;  /* 1200/16 */
+}
+#app-section {
+  //min-height: 80vh;
+  //margin: 1.25rem auto 0; /* 20/16 */
+  //border: 0.063rem solid pink; /* 1/16 */
+  background: #F4F4F4;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.25rem; /* 20/16 */
+  //background: #F4F4F4;
+  padding-bottom: 1.25rem; /* 20/16 */
+}
+
+#app-section .descripcion {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#app-section .descripcion img {
+  max-height: 6.25rem; /* 100/16 */
+  //max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
