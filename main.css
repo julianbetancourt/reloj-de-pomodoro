@@ -74,3 +74,102 @@ p {
   display: block;
   margin: 0 auto;
 }
+
+#app-section .card {
+  flex-grow: 3;
+  //border: 0.063rem solid; /* 1/16 */
+  max-width: 26.5rem; /* 424/16 */
+  border-radius: 0.625rem; /* 10/16 */
+  //background: #FFC677;
+  color: #fff;
+  background: rgba(255,198,119,1);
+  background: linear-gradient(135deg, rgba(255,198,119,1) 0%, rgba(241,111,92,1) 64%, rgba(241,111,92,1) 100%);
+}
+
+.card h1 {
+  text-align: center;
+  border-bottom: 1px solid;
+  margin: 0;
+  padding: 0.625rem 0; /* 10/16 */
+  //background: #FE8245;
+  border-radius: 0.625rem 0.625rem 0 0; /* 10/16, 10/16 */
+}
+.card .reloj {
+  display: flex;
+  flex-direction: column;
+  font-size: 4.188rem; /* 67/16 */
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 2.75rem; /* 24/16, 44/16 */
+  font-weight: 300;
+}
+.reloj .cronometro {
+  display: flex;
+}
+
+.reloj .menos {
+  margin-right: 1.25rem; /* 20/16 */
+  font-size: 3.125rem; /* 50/16 */
+  align-self: center;
+  cursor: pointer;
+}
+.reloj .mas {
+  margin-left: 1.25rem; /* 20/16 */
+  font-size: 3.125rem; /* 50/16 */
+  align-self: center;
+  cursor: pointer;
+}
+
+.reloj .control {
+  margin-top: 1.375rem; /* 22/16 */
+}
+.reloj .control .play,
+.reloj .control .reset {
+  cursor: pointer;
+}
+
+.card .break {
+  //display: flex;
+  //justify-content: center;
+  font-size: 1.563rem; /* 25/16 */
+  //flex-direction: column;
+  margin: 0 auto;
+  min-width: 26.5rem; /* 424/16 */
+}
+
+.card .break-title {
+  display: block;
+  text-align: center;
+}
+
+.card .break-control {
+  display: flex;
+  justify-content: center;
+}
+
+.break-control .menos{
+  margin-right: 0.625rem; /* 10/16 */
+  cursor: pointer;
+}
+
+.break-control .mas {
+  margin-left: 0.625rem; /* 10/16 */
+  cursor: pointer;
+}
+
+/***********************
+ FOOTER
+***********************/
+footer {
+  background: steelblue;
+}
+
+footer h1 {
+  margin-top: 0;
+  padding-top: 1.313rem; /* 21/16 */
+}
+
+footer p {
+  margin-bottom: 0;
+  padding-bottom: 1.25rem; /* 20/16 */
+}

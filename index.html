@@ -22,10 +22,41 @@
             <p>La Técnica Pomodoro es un método para la administración del tiempo desarrollado por Francesco Cirillo a fines de los años 1980. La técnica usa un reloj para dividir el tiempo dedicado a un trabajo en intervalos de 25 minutos -llamados 'pomodoros'- separados por pausas. La Técnica Pomodoro se llama así por la forma de tomate del clásico reloj de cocina que usó el creador de la técnica, el italiano Francesco Cirillo, cuando era un estudiante universitario (Pomodoro es tomate, en italiano). - <a href="https://es.wikipedia.org/wiki/T%C3%A9cnica_Pomodoro">Wikipedia</a></p>
             <p>Para usar el pomodoro, presione los botones de menos y mas y los botones de play, pausa y reset. En la parte superior se muestra cuántas sesiones de trabajo ha completado</p>
           </div>
+          <div class="card">
+            <h1 class="estado"></h1>
+            <div class="contenido-reloj">
+              <div class="reloj">
+                <p class="completado">0</p>
+                <div class="cronometro">
+                  <i class="menos ion-ios-minus-outline menos-cr"></i>
+                  <div id="tiempo"></div>
+                  <i class="mas ion-ios-plus-outline mas-cr"></i>
+                </div>
+                <div class="control">
+                  <i class="ion-ios-loop reset"></i>
+                  <i class="ion-ios-play-outline play"></i>
+                </div>
+              </div>
+              <div class="break">
+                <span class="break-title">Break:</span>
+                <div class="break-control">
+                  <i class="menos ion-ios-minus-outline menos-br"></i>
+                  <span class="break-m"></span>
+                  <i class="mas ion-ios-plus-outline mas-br"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+  <footer>
+    <div class="container">
+      <h1>Acerca de</h1>
+      <p>Proyecto desarrollado para la guía 2 del bloque de Construcción de Software de la Universidad EAN. Fue realizado por Julian Betancourt, Alvaro Castiblanco y . El respositorio en GitHub, se puede encontrar <a href="#">aquí</a></p>
+    </div>
+  </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="main.js" charset="utf-8"></script>
-</body>
 </html>
