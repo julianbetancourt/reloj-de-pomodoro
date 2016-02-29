@@ -21,3 +21,19 @@ var obtenerDuracion = function (estadoActual) {
     return duracionBreak;
   }
 }
+
+var obtenerEstado = function (estadoActual, corriendo) {
+  var output = "";
+
+  //si estadoActual = true (trabajo)
+  if (estadoActual) {
+    output = 'Trabajando';
+  } else { //si estadoActual = false(break)
+    output = 'En break';
+  }
+  //si corriendo = false
+  if (!corriendo) {
+    ouput = 'Pausado';
+  }
+  return output;
+}
