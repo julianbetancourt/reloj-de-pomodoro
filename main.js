@@ -37,3 +37,11 @@ var obtenerEstado = function (estadoActual, corriendo) {
   }
   return output;
 }
+
+function obtenerNotificacion(cuerpo, icono, titulo) {
+  var options = {
+    body: cuerpo,
+    icon: icono
+  }
+  var n = new Notification(titulo, options);
+}
