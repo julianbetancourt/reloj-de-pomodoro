@@ -45,3 +45,16 @@ function obtenerNotificacion(cuerpo, icono, titulo) {
   }
   var n = new Notification(titulo, options);
 }
+
+function msATiempo(duracion) {
+  var milisegundos = parseInt((duracion % 1000) / 100);
+  var segundos = parseInt((duracion / 1000) % 60);
+  var minutos = parseInt((duracion / (1000 * 60)) % 60);
+  var horas = parseInt((duracion / (1000 * 60 * 60)) % 24);
+
+  horas = (horas < 10) ? "0" + horas: horas;
+  minutos = (minutos < 10) ? "0" + minutos: minutos;
+  segundos = (segundos < 10) ? "0" + segundos: segundos;
+
+  return minutos + ":" + segundos;
+}
