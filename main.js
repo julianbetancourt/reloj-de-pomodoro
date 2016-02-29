@@ -58,3 +58,7 @@ function msATiempo(duracion) {
 
   return minutos + ":" + segundos;
 }
+
+$('.estado').text(obtenerEstado(estadoActual, corriendo));
+$('#tiempo').text(msATiempo(obtenerDuracion(estadoActual)));
+$('.break-m').text(msATiempo(duracionBreak));
