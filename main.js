@@ -134,3 +134,16 @@ $('.reset').click(function () {
   $('#tiempo').text(msATiempo(obtenerDuracion(estadoActual)));
   $('.estado').text(obtenerEstado(estadoActual, corriendo));
 });
+
+$('.mas-cr').click(function () {
+  duracionTrabajo += minuto; //incrementar duracionTrabajo por un minuto
+  $('#tiempo').text(msATiempo(duracionTrabajo)); //reflejar cambio
+});
+
+$('.menos-cr').click(function () {
+  duracionTrabajo -= minuto; //disminuir duracionTrabajo por un minuto
+  if (duracionTrabajo < 1) {
+    duracionTrabajo = minuto;
+  }
+  $('#tiempo').text(msATiempo(duracionTrabajo)); //reflejar cambio
+});
