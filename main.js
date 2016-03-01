@@ -105,3 +105,32 @@ var actualizarReloj = function () {
   $('.estado').text(obtenerEstado(estadoActual, corriendo));
   //console.log(transcurrido);
 };
+
+//Cuando se presiona .play
+$('.play').click(function () {
+  //si corriendo = false
+  if (!corriendo) {
+    inicioTrabajo.play(); //Sonido inicio
+    corriendo = true;
+    tiempoInicio = Date.now();
+    relojID = setInterval(actualizarReloj, 13); //Inicio de reloj
+    $('.play').removeClass('ion-ios-play-outline').addClass('ion-ios-pause-outline'); //cambio de play a pause
+  } else { // si corriendo = true
+    corriendo = false;
+    transcurridoSesion += transcurrido;
+    clearInterval(relojID); //Detener reloj
+    $('.estado').text('Pausado'); //
+    $('.play').removeClass('ion-ios-pause-outline').addClass('ion-ios-play-outline'); //cambio de pause a play
+  }
+});
+
+//cuando se presiona .reset
+$('.reset').click(function () {
+  $('.play').removeClass('ion-ios-pause-outline').addClass('ion-ios-play-outline'); //cambio de pause a play
+  clearInterval(relojID); //detener reloj
+  corriendo = false;
+  transcurridoSesion = 0;
+  estadoActual = true; //estadoActual = trabajo
+  $('#tiempo').text(msATiempo(obtenerDuracion(estadoActual)));
+  $('.estado').text(obtenerEstado(estadoActual, corriendo));
+});
