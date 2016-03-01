@@ -1,8 +1,8 @@
 var corriendo = false;
 var transcurrido = 0; //ms
 var transcurridoSesion = 0; //ms
-var minuto = 60 * 100; //ms
-var duracionTrabajo = 1 * minuto; //ms
+var minuto = 60 * 1000; //ms
+var duracionTrabajo = 25 * minuto; //ms
 var duracionBreak = 5 * minuto; //ms
 var estadoActual = true; //true = trabajo, false = break
 var sesionesCompletas = 0;
@@ -146,4 +146,17 @@ $('.menos-cr').click(function () {
     duracionTrabajo = minuto;
   }
   $('#tiempo').text(msATiempo(duracionTrabajo)); //reflejar cambio
+});
+
+$('.mas-br').click(function () {
+  duracionBreak += minuto; //aumentar duracionBreak por un minuto
+  $('.break-m').text(msATiempo(duracionBreak)); //reflejar cambio
+});
+
+$('.menos-br').click(function() {
+  duracionBreak -= minuto; //disminuir duracionBreak por un minuto
+  if (duracionBreak < 1) {
+    duracionBreak = minuto;
+  }
+  $('.break-m').text(msATiempo(duracionBreak)); //reflejar cambio
 });
