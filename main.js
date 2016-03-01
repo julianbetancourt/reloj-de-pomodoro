@@ -62,3 +62,46 @@ function msATiempo(duracion) {
 $('.estado').text(obtenerEstado(estadoActual, corriendo));
 $('#tiempo').text(msATiempo(obtenerDuracion(estadoActual)));
 $('.break-m').text(msATiempo(duracionBreak));
+
+var actualizarReloj = function () {
+  var final = Date.now();
+
+  //transcurrido en ms desde clic en play, si pause es presionado, se reinicia
+  transcurrido = final - tiempoInicio;
+
+  //transcurrido en ms desde clic en play, no se reinicia cuando pause es presionado
+  var totalTranscurrido = transcurridoSesion + transcurrido;
+
+  //ms de duracionTrabajo o duracionBreak inicial ej: 1500000ms(25min)
+  var duracionActual = obtenerDuracion(estadoActual);
+
+  //si totalTranscurrido (ms) es mayor al reloj inicial (se acaba tiempo)
+  if (totalTranscurrido > duracionActual) {
+      //si estadoActual es break
+      if (!estadoActual) {
+        inicioTrabajo.play(); //Sonido inicio
+      } else {
+        finalTrabajo.play(); //Sonido fin
+      }
+
+    //si estadoActual es trabajo
+    if (estadoActual) {
+      sesionesCompletas++; //incrementar sesiones completas
+      $('.completado').text(sesionesCompletas);
+    }
+
+    //Cambiar de estado
+    estadoActual = !estadoActual;
+
+    transcurridoSesion = 0;
+    tiempoInicio = Date.now(); //reiniciar tiempoInicio
+
+    var notificar = obtenerEstado(estadoActual, corriendo);
+
+    obtenerNotificacion('Reloj de Pomodoro', 'http://www.free-icons-download.net/images/tomato-icon-61411.png', notificar); //Notificar
+
+  }
+  $('#tiempo').text(msATiempo(duracionActual - totalTranscurrido));
+  $('.estado').text(obtenerEstado(estadoActual, corriendo));
+  //console.log(transcurrido);
+};
